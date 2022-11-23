@@ -1,0 +1,15 @@
+﻿@page "/handling-component-error"
+
+<h3>ComponentErrorHandling</h3>
+<ErrorBoundary @ref="ComponentErrorBoundary">
+    <ChildContent>
+        <TriggerError/>
+    </ChildContent>
+    <ErrorContent Context="ex">
+        Caught an exception from the TriggerError componennt. The exception message is <span class="text-danger">@ex.Message</span>. <button class="btn btn-link" @onclick="_ => ComponentErrorBoundary?.Recover()">Continue</button>
+    </ErrorContent>
+</ErrorBoundary>
+
+@code {
+    public ErrorBoundary? ComponentErrorBoundary { get; set; } = default;
+}

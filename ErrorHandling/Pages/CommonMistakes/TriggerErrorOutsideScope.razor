@@ -1,0 +1,15 @@
+﻿@inject HttpClient HttpClient
+
+<h3>TriggerErrorOutsideScope</h3>
+<ErrorBoundary>
+    <ChildContent>
+        <button class="btn btn-primary" type="button" @onclick='TriggerHttpClientErrorAsync'>Trigger HttpClient error</button>
+        <button class="btn btn-primary" type="button" @onclick="TriggerClientSideError">Trigger client side error</button>
+    </ChildContent>
+    <ErrorContent>An error has occurred.</ErrorContent>
+</ErrorBoundary>
+
+@code {
+    public async Task TriggerHttpClientErrorAsync() => await HttpClient.GetAsync("https://blazorschool.com");
+    public void TriggerClientSideError() => throw new Exception("Blazor School");
+}

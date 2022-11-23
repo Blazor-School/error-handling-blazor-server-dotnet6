@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalErrorCatching", "GlobalErrorCatching\GlobalErrorCatching.csproj", "{6F5BCCB4-20B0-4B4A-801C-F4D06218CA2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatchingErrorFromLayout", "CatchingErrorFromLayout\CatchingErrorFromLayout.csproj", "{0FCBB7CE-389B-46FB-9251-CBC7FEDDEBD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatchingErrorFromLayout", "CatchingErrorFromLayout\CatchingErrorFromLayout.csproj", "{0FCBB7CE-389B-46FB-9251-CBC7FEDDEBD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandling", "ErrorHandling\ErrorHandling.csproj", "{EDCDC246-7ECF-4755-88FA-64D3B711860C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0FCBB7CE-389B-46FB-9251-CBC7FEDDEBD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FCBB7CE-389B-46FB-9251-CBC7FEDDEBD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FCBB7CE-389B-46FB-9251-CBC7FEDDEBD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDCDC246-7ECF-4755-88FA-64D3B711860C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDCDC246-7ECF-4755-88FA-64D3B711860C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDCDC246-7ECF-4755-88FA-64D3B711860C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDCDC246-7ECF-4755-88FA-64D3B711860C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

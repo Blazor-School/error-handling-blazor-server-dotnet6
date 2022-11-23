@@ -11,10 +11,7 @@ builder.Services.AddHttpClient<BlazorSchoolHttpClientWrapper>((sp, httpClient) =
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    _ = app.UseExceptionHandler("/Error");
-}
+_ = app.UseExceptionHandler("/Error");
 
 app.UseStaticFiles();
 

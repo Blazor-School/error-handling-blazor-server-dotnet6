@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Diagnostics;
 
@@ -18,8 +19,16 @@ public class ErrorModel : PageModel
         _logger = logger;
     }
 
-    public void OnGet()
+    public void OnGet() => RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+
+    public void OnPost()
     {
-        RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+        var exceptionHandler = HttpContext.Features.Get<IExceptionHandlerFeature>();
+
+        if (exceptionHandler is not null)
+        {
+            Console.WriteLine($"You can log the error with the detailed message in the exceptionHandler {exceptionHandler.Error.Message}");
+            Console.WriteLine($"You can log the error with the stack trace in the exceptionHandler {exceptionHandler.Error.StackTrace}");
+        }
     }
 }

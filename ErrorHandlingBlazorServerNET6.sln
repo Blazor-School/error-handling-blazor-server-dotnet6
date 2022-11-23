@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalErrorCatching", "Glob
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatchingErrorFromLayout", "CatchingErrorFromLayout\CatchingErrorFromLayout.csproj", "{0FCBB7CE-389B-46FB-9251-CBC7FEDDEBD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandling", "ErrorHandling\ErrorHandling.csproj", "{EDCDC246-7ECF-4755-88FA-64D3B711860C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHandling", "ErrorHandling\ErrorHandling.csproj", "{EDCDC246-7ECF-4755-88FA-64D3B711860C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

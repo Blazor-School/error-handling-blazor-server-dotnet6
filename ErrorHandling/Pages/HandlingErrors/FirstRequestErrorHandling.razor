@@ -1,0 +1,8 @@
+﻿@page "/first-request-error-handling"
+
+<h3>FirstRequestErrorHandling</h3>
+<div>Refresh this page to see the first request error page.</div>
+
+@code {
+    protected override void OnInitialized() => throw new Exception("Blazor School error demonstration.");
+}

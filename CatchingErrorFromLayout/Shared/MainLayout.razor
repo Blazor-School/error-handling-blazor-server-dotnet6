@@ -1,0 +1,33 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>CatchingErrorFromLayout</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+            @*<CascadingValue Value="MainErrorBoundary">
+                <ErrorBoundary @ref="MainErrorBoundary">
+                    <ChildContent>
+                        @Body
+                    </ChildContent>
+                    <ErrorContent>
+                        <div>An error occurred <button class="btn btn-link" @onclick="_ => MainErrorBoundary?.Recover()">Resolve Error</button></div>
+                    </ErrorContent>
+                </ErrorBoundary>
+            </CascadingValue>*@
+        </article>
+    </main>
+</div>
+
+@code {
+    public ErrorBoundary? MainErrorBoundary { get; set; }
+}

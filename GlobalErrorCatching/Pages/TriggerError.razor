@@ -1,0 +1,11 @@
+﻿@page "/trigger-error"
+@inject HttpClient HttpClient
+
+<h3>TriggerError</h3>
+<button class="btn btn-primary" type="button" @onclick='TriggerHttpClientErrorAsync'>Trigger HttpClient error</button>
+<button class="btn btn-primary" type="button" @onclick="TriggerClientSideError">Trigger client side error</button>
+
+@code {
+    public async Task TriggerHttpClientErrorAsync() => await HttpClient.GetAsync("https://unknown-wesite-2234123.com");
+    public void TriggerClientSideError() => throw new Exception("Blazor School");
+}

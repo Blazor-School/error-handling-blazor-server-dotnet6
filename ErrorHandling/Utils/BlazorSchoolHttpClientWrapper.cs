@@ -1,4 +1,6 @@
-﻿namespace ErrorHandling.Utils;
+﻿using System.Net;
+
+namespace ErrorHandling.Utils;
 
 public class BlazorSchoolHttpClientWrapper
 {
@@ -18,6 +20,19 @@ public class BlazorSchoolHttpClientWrapper
         try
         {
             response = await _httpClient.GetAsync(requestUri);
+
+            switch (response.StatusCode)
+            {
+                case HttpStatusCode.OK:
+                    break;
+                case HttpStatusCode.Unauthorized:
+                    _exceptionRecorderService.Exceptions.Add(new($"The request returns {response.StatusCode}."));
+                    break;
+                // Handle other status codes
+                default:
+                    _exceptionRecorderService.Exceptions.Add(new($"{response.StatusCode}"));
+                    break;
+            }
         }
         catch (Exception ex)
         {

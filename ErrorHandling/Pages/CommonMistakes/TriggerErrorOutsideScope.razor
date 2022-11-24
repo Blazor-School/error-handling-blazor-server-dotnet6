@@ -1,6 +1,8 @@
-﻿@inject HttpClient HttpClient
+﻿@page "/common-mistake-trigger-error-outside-scope"
+@inject HttpClient HttpClient
 
 <h3>TriggerErrorOutsideScope</h3>
+<div>The error content will never show up because the exception is thrown from the same level with error boundary component.</div>
 <ErrorBoundary>
     <ChildContent>
         <button class="btn btn-primary" type="button" @onclick='TriggerHttpClientErrorAsync'>Trigger HttpClient error</button>
@@ -10,6 +12,6 @@
 </ErrorBoundary>
 
 @code {
-    public async Task TriggerHttpClientErrorAsync() => await HttpClient.GetAsync("https://blazorschool.com");
+    public async Task TriggerHttpClientErrorAsync() => await HttpClient.GetAsync("https://unknown-wesite-2234123.com");
     public void TriggerClientSideError() => throw new Exception("Blazor School");
 }

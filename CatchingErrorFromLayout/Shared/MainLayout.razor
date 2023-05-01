@@ -13,8 +13,7 @@
         </div>
 
         <article class="content px-4">
-            @Body
-            @*<CascadingValue Value="MainErrorBoundary">
+            <CascadingValue Value="MainErrorBoundary">
                 <ErrorBoundary @ref="MainErrorBoundary">
                     <ChildContent>
                         @Body
@@ -23,7 +22,7 @@
                         <div>An error occurred <button class="btn btn-link" @onclick="_ => MainErrorBoundary?.Recover()">Resolve Error</button></div>
                     </ErrorContent>
                 </ErrorBoundary>
-            </CascadingValue>*@
+            </CascadingValue>
         </article>
     </main>
 </div>
